@@ -11,7 +11,7 @@ module.exports = {
     development: {
         username: "sa",
         password: "root",
-        database: "Wimera_DB",
+        database: "DB",
         host: "localhost",
         dialect: "mssql",
         operatorsAliases: false

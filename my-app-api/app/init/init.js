@@ -1,19 +1,3 @@
-/**
- * Wimera System Pvt.Ltd, Bangalore - India.
- *
- * Copyright (c) 2019. Wimera System Pvt.Ltd.
- * All Rights Reserved.
- *
- * Revision number:
- * ******************
- * Rev.01 : 25-Nov-2019     @Author: Syed (ramesh@wimerasys.com)
- *     Web server init added
- * 
- */
-
-/*
- * retrieve the required modules
- */
 'use strict';
 
 const db = require('../models/db');
