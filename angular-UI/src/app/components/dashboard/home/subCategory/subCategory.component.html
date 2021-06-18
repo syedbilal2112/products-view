@@ -1,0 +1,93 @@
+<app-home-nav></app-home-nav>
+
+<div class="innerpage_banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Sub Categories</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- section -->
+<div class="section layout_padding wrapper">
+  <div class="portfolio">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 text_align_center">
+          <input type="text" class="form-control" placeholder="Filter Data"
+            (keydown)="filterProducts($event.target.value)">
+        </div>
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-3" style="text-align: right;position: relative;right: 20px;">
+          <button class="btn btn-primary" (click)="addProduct(ModalForAddData)"
+            style="margin-left: 5px;color: white;"><i class="fa fa-plus-circle"></i></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text_align_center">
+          <h2 style="font-size: 30px;color: black;font-weight: 600;text-transform: uppercase;"></h2>
+          <table class="table table-striped">
+            <tr>
+              <th>Sl.no</th>
+              <th>Main Category</th>
+              <th>Sub Category</th>
+              <th>Action</th>
+            </tr>
+            <tr
+              *ngFor="let product of getSelectedproducts(filteredCategoryArray);let i = index;let first = first;let last = last;">
+              <td>{{i + 1}}</td>
+              <td>{{product.mainCategory}}</td>
+              <td>{{product.subCategory}}</td>
+              <td>
+                <button class="btn btn-warning" (click)="editProduct(ModalForAddData,product)"
+                  style="margin-left: 5px;color: white;"><i class="fa fa-pencil-square-o "></i></button>
+                <button class="btn btn-danger" (click)="deleteProduct(product.id)" style="margin-left: 5px;"><i
+                    class="fa fa-trash"></i></button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #ModalForAddData>
+  <!-- <div class="modal-dialog modal-lg"> -->
+  <div class="modal-header" cellspacing="0px" style="display: block;">
+    <span>
+      {{headerData}} {{category}}
+    </span>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <form [formGroup]="formData" (ngsubmit)="onSubmit()">
+        <div class="row d-flex justify-content-around">
+          <div class="col-md-3">
+            <label style="    font-size: 13px;margin: 0px;">Select Main Category</label>
+            <select formControlName="mainCategory" class="form-control" >
+              <option value="">Select Main Category</option>
+              <option value="Electrodevices">Electrodevices</option>
+              <option value="Automation">Automation</option>
+            </select>
+          </div>
+          <div class="col-md-7">
+            <textarea formControlName="subCategory" class="form-control" type="text" required
+              placeholder="Enter Sub Category" ></textarea>
+          </div>
+        </div>
+        <div style="float: right;">
+          <button type="button" class="btn btn-primary " (click)="setData()">{{actionText}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

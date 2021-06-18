@@ -1,0 +1,94 @@
+.innerpage_banner {
+    background-color: #f9f9f9;
+    min-height: 150px;
+    text-align: center;
+    background-image: url('../../../../../assets/images/construction-and-mobility1.jpg');
+    background-size: cover;
+    background-position: bottom center;
+}
+.innerpage_banner h2 {
+    margin: 55px 0 0;
+    padding: 0;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 500;
+    position: relative;
+    color: white;
+}
+#demo .img-responsive {
+    width: 100%;
+}
+.top-header.fixed-menu .search-btn {
+    background: #111;
+}
+.top-header.fixed-menu .search-box:hover .search-txt {
+    width: 240px;
+    padding: 0 10px;
+    border: solid #000 1px;
+    height: 41px;
+}
+.top-header.fixed-menu ul li:hover a, .top-header.fixed-menu ul li:focus a {
+    color: #30475e !important;
+}
+
+
+.list-style li:before {
+   content: '\f00c';
+   font-family: 'FontAwesome';
+   color: #7efcfc;
+   font-size: 11px;
+   font-weight: 300;
+   padding-right: 8px;
+}
+
+.info-active{
+    background: #30475e;
+    border-color: #00e7ff;
+}
+
+.lb-data .lb-close {
+    display: block;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: url('../../../../../assets/images/close.png') top right no-repeat;
+    text-align: right;
+    outline: 0;
+    filter: alpha(Opacity=70);
+    opacity: .7;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+}
+
+
+
+
+
+.lb-nav a.lb-next {
+    width: 64%;
+    right: 0;
+    float: right;
+    background: url('../../../../../assets/images/next.png') right 48% no-repeat;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity 0.6s;
+    -o-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+  }
+
+  
+.lb-nav a.lb-prev {
+    width: 34%;
+    left: 0;
+    float: left;
+    background: url('../../../../../assets/images/prev.png') left 48% no-repeat;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity 0.6s;
+    -o-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+  }

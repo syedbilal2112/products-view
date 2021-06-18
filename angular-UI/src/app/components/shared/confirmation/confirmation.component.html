@@ -1,0 +1,44 @@
+<div *ngIf="showConfirmationDialog" class="confirm bg">
+  <div class="row dialog-box">
+    <div class="col-md-12">
+      <div class="row header">
+        <div class="col-xs-6">
+          <div class="title">
+            <span *ngIf="confirmObj.subject === ''">Confirmation</span>
+            <span *ngIf="confirmObj.subject !== ''">{{confirmObj.subject}}</span>
+          </div>
+        </div>
+        <div class="col-xs-6 pointer" (click)="reject()">
+          <i class="fa fa-close"></i>
+        </div>
+      </div>
+      <div class="row body">
+        <div class="icon col-xs-3 col-sm-2 text-right">
+          <i class="fa fa-exclamation-triangle"></i>
+        </div>
+        <div class="message col-xs-9 col-sm-10">
+          <div class="row">
+            <p> {{confirmObj.message}} </p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row footer">
+        <div class="col-md-offset-6 col-sm-offset-6 col-xs-offset-6 col-md-6 col-sm-6 col-xs-6">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <button (click)="reject()" class="md-flat md-button-ripple">
+              Cancel
+            </button>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <button (click)="confirm()" class="btn bxsd-btn ripple">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

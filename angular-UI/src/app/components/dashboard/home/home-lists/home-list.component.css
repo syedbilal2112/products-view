@@ -1,0 +1,42 @@
+.innerpage_banner {
+    background-color: #f9f9f9;
+    min-height: 150px;
+    text-align: center;
+    background-image: url('../../../../../assets/images/construction-and-mobility1.jpg');
+    background-size: cover;
+    background-position: bottom center;
+}
+.innerpage_banner h2 {
+    margin: 55px 0 0;
+    padding: 0;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 500;
+    position: relative;
+    color: white;
+}
+#demo .img-responsive {
+    width: 100%;
+}
+.top-header.fixed-menu .search-btn {
+    background: #111;
+}
+.top-header.fixed-menu .search-box:hover .search-txt {
+    width: 240px;
+    padding: 0 10px;
+    border: solid #000 1px;
+    height: 41px;
+}
+.top-header.fixed-menu ul li:hover a, .top-header.fixed-menu ul li:focus a {
+    color: #30475e !important;
+}
+
+
+.list-style li:before {
+   content: '\f00c';
+   font-family: 'FontAwesome';
+   color: #7efcfc;
+   font-size: 11px;
+   font-weight: 300;
+   padding-right: 8px;
+}

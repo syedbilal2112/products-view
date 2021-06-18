@@ -1,0 +1,44 @@
+<app-home-list ></app-home-list>
+
+
+<div class="innerpage_banner">
+  <div class="container">
+     <div class="row"> 
+        <div class="col-md-12">
+           <h2>Login</h2>
+        </div>
+     </div>
+  </div>
+</div>
+
+<div class="wrapper fadeInDown" style="margin-top: 2%;margin-bottom: 2%;">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <!-- <img src="" id="icon" alt="User Icon" /> -->
+      </div>
+      <!-- Remind Passowrd -->
+      <form  class="form-horizontal"  #userForm="ngForm" (ngSubmit)="loginTo(userForm)" style="margin-top: 25px;">
+        <div class="form-group">
+          <label for="inputusername3" class="col-xs-2 control-label">Username</label>
+          <div class="col-xs-10">
+            <input placeholder="Username" type="text" autofocus type="text" name='email' class="form-control" ngModel required #name="ngModel" placeholder="Username" required style="border: 2px solid #2a8bb0;">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3" class="col-xs-2 control-label">Password</label>
+          <div class="col-xs-10 input-icons">
+              <input name="password" type="password" value="" class="form-control input-field" ngModel required #password placeholder="PASSWORD" required style="border: 2px solid #2a8bb0">
+              <i class="fa toggle-pwd-icon icon" [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordView()"></i>
+          </div>
+        </div>
+        <div class="form-group submit-btn">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-info">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+ </div>

@@ -1,0 +1,74 @@
+<header class="top-header" style="height: 75px;">
+    <nav class="navbar header-nav navbar-expand-lg" style="float: left;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd"
+                aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbar-wd" style="    margin-left: 75px;
+            margin-top: 13px;">
+                <ul class="navbar-nav">
+                    <li><a class="nav-link" routerLink="/" routerLinkActive="active" style="color: #fff;">Home</a></li>
+                    <li class="cd-dropdown-wrapper">
+                        <a class="cd-dropdown-trigger nav-link" (mouseover)="headerToggle()" style="color: #fff;
+                        padding-right: 36px;">Products</a>
+                        <nav [ngClass]="mainNav?'cd-dropdown dropdown-is-active':'cd-dropdown'">
+                            <a href="#0" class="cd-close" (mouseover)="headerToggle()">Close</a>
+                            <ul class="cd-dropdown-content" style="max-height: 550px;overflow-y: auto;">
+                                <li>
+                                <!-- <button [ngClass]="isAuto ? 'btn btn-info info-active' : 'btn btn-info'"
+                                        style="margin:7px;margin-left: 37px;text-transform: uppercase;"
+                                        (click)="ulAutomation()">UL AUTOMATION <i class="arrow down"></i></button> -->
+                                <button [ngClass]="isElec ? 'btn btn-info info-active' : 'btn btn-info'"
+                                        style="margin:7px;text-transform: uppercase;">Electrodevices <i class="arrow down"></i></button>
+                                </li>
+                                <li class="has-children"
+                                    *ngFor="let product of selectedProductArray;let first = first;let last = last;">
+                                    <a [ngClass]="productNav[product.id]?'productAnchor is-active':'productAnchor'"
+                                        (mouseover)="callSubProducts($event, product)">{{product.subCategory}}</a>
+                                    <ul [ngClass]="productNav[product.id]?'cd-dropdown-gallery is-active fade-in':'cd-dropdown-gallery'"
+                                        style="max-height: 550px;overflow: auto;">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <img src="{{APIUrl+filteredProductArray[0].productImage}}"
+                                                    class="product-img">
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <h3 style="font-weight: 700;font-size: 18px;">{{product.subCategory}}
+                                                </h3>
+                                                <p style="height: 149px;overflow: hidden;">
+                                                    {{filteredProductArray[0].productDescription}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div *ngFor="let subProduct of filteredProductArray;let first = first;let last = last;"
+                                                class="{{'col-sm-'+(12/filteredProductArray.length)}}"
+                                                style="max-width: 250px;margin: auto;">
+                                                <img src="{{APIUrl+subProduct.productImage}}" class="product-img">
+                                                <button (click)="goToProduct(subProduct)"
+                                                    class="product-btn">{{subProduct.productName}}</button>
+                                                <p style="height: 50px; overflow: hidden; text-align: center;">
+                                                    {{subProduct.productDescription}}</p>
+                                            </div>
+                                        </div>
+                                        <div style="float: right;">
+                                            <button class="btn btn-info" style="margin-top: 20px;"
+                                                (click)="goToCategory(product)">See More <i
+                                                    class="arrow-right right"></i></button>
+                                        </div>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li><a class="nav-link" routerLink="/aboutus" style="color: #fff;" routerLinkActive="active">About
+                            Us</a></li>
+                    <li><a class="nav-link custom-link" style="background:#fff;color:#000 !important;"
+                            routerLink="/contactus" routerLinkActive="active">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

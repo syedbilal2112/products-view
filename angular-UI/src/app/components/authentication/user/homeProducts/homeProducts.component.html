@@ -1,0 +1,67 @@
+
+<!-- section -->
+<div class="section layout_padding wrapper">
+    <div class="portfolio">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 text_align_center">
+                    <h2 style="font-size: 30px;color: black;font-weight: 600;text-transform: uppercase;">Our Products
+                    </h2>
+                    <button [ngClass]="isAll ? 'btn btn-info info-active' : 'btn btn-info'"
+                        style="margin:7px;text-transform: uppercase;" (click)="allProducts()">All Products<i
+                            class="arrow down"></i></button>
+                    <!-- <button [ngClass]="isAuto ? 'btn btn-info info-active' : 'btn btn-info'"
+                        style="margin:7px;text-transform: uppercase;" (click)="automation()">AUTOMATION <i class="arrow down"></i></button> -->
+                    <button [ngClass]="isElec ? 'btn btn-info info-active' : 'btn btn-info'"
+                        style="margin:7px;text-transform: uppercase;" (click)="electrodevices()">Electrodevices<i class="arrow down"></i></button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="text" class="form-control" placeholder="Filter Products By Name"
+                        (keydown)="filterProducts($event.target.value)">
+                    <div style="height: 600px;overflow: auto;">
+                        <p style="padding: 10px;margin: 0px;" (click)="setAllCheckedProducts(!isAllChecked)">
+                            <img src="{{isAllChecked?'assets/images/checkbox.png':'assets/images/beforeCheckbox.png'}}"
+                                style="width: 20px;"> All
+                        </p>
+                        <p *ngFor="let product of selectedProductArray;let first = first;let last = last;let i = index;"
+                            style="padding: 10px;margin: 0px;"
+                            (click)="setCheckedProducts(i,product.subCategory,!product.checked)">
+                            <img src="{{product.checked?'assets/images/checkbox.png':'assets/images/beforeCheckbox.png'}}"
+                                style="width: 20px;"> {{product.subCategory}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="portfolio-container">
+                        <div class="row">
+                            <div *ngFor="let products of getSelectedproducts(filteredProductArray);let first = first;let last = last;"
+                                class="col-lg-3 col-md-6 col-sm-12 portfolio-item" style="padding-left:0px;">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="{{APIUrl+products.productImage?APIUrl+products.productImage:''}}"
+                                            alt="Project Image">
+                                        <a href="{{APIUrl+products.productImage?APIUrl+products.productImage:''}}"
+                                            class="link-preview" data-lightbox="portfolio"
+                                            [attr.data-imageText]='products.productName'
+                                            [attr.data-imageContent]='products.productDescription'
+                                            [attr.data-imageId]='products.id'><i class="fa fa-eye"></i></a>
+                                        <button class="portfolio-title"
+                                            (click)="navigateToSingleProduct(products.id)">{{products.productName}}</button>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="full center">
+                        <button *ngIf="getSelectedproducts(filteredProductArray).length > 0"
+                            (click)="loadMoreProducts()" class="hvr-radial-out button-theme">See More Products</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

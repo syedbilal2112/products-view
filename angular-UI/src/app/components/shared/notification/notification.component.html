@@ -1,0 +1,11 @@
+<div class="notification-wrapper top right">
+  <div *ngFor="let notification of notifications; let i = index">
+    <div
+      class="notification {{ cssClass(notification) }} alert-dismissable {{ cssClassClosing(notification) }}">
+      <span *ngIf="notification.subject !== ''"
+            class="notification-title">{{notification.subject}}</span>
+      <p class="notification-content">{{notification.message}}</p>
+      <a class="notification-close" (click)="removeAlert(notification)">&times;</a>
+    </div>
+  </div>
+</div>
