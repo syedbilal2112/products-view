@@ -15,6 +15,7 @@ passport.use('signup', new localStrategy({
     try {
         const name = req.body.name;
         const role = 'ADMIN';
+        const otp = '12345';
         const timestamp = new Date().getTime();
 
         let user = await userDao.getOneUser({ email: email });
@@ -43,6 +44,7 @@ passport.use('login', new localStrategy({
 }, async (email, password, done) => {
     try {
         const user = await userDao.getOneUser({ email });
+        
         if (!user) {
             return done(null, false, { message: 'user not found' });
         }
