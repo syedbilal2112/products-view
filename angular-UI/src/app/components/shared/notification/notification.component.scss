@@ -1,0 +1,166 @@
+.notification-wrapper.bottom {
+  bottom: 20px;
+}
+
+.notification-wrapper.top {
+  top: 40px;
+}
+
+.notification-wrapper.right {
+  right: 30px;
+  @media screen and (max-width: 480px){
+    right: 10px;
+  }
+}
+
+.notification-wrapper {
+  position: fixed;
+  width: 300px;
+  z-index: 5000;
+}
+
+/*.notification {
+  opacity: 0;
+  margin-right: 10px;
+  -webkit-transition: opacity 0.5s, margin-right 1s; !* For Safari 3.1 to 6.0 *!
+  transition: opacity 0.5s, margin-right 1s;
+}
+
+.notification .show {
+  margin-right: 30px;
+  opacity: 1;
+}*/
+
+.right {
+  float: right;
+}
+
+/*** copy ***/
+
+.notification {
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-bottom: 10px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: 1px solid white;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.notification-title {
+  margin: 0;
+  padding: 0 50px 0 0;
+  font-size: 16px;
+}
+
+.notification-content {
+  margin: 0;
+  font-size: 13px;
+  padding: 0 10px 0 0;
+  line-height: 20px;
+}
+
+.notification .icon {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+}
+
+.notification-close {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.notification .icon svg {
+  fill: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.notification .icon svg g {
+  fill: #fff;
+}
+
+.notification.rtl-mode {
+  direction: rtl;
+}
+
+.notification.rtl-mode .sn-content {
+  padding: 0 0 0 50px;
+}
+
+.notification.rtl-mode svg {
+  left: 0;
+  right: auto;
+}
+
+.notification.error {
+  /*background: #F44336;*/
+  border-left: 3px solid #F44336;
+}
+
+.notification.success {
+  /*background: #8BC34A;*/
+  border-left: 3px solid #8BC34A;
+}
+
+.notification.alert {
+  /*background: #ffdb5b;*/
+  border-left: 3px solid #ffdb5b;
+}
+
+.notification.info {
+  /*background: #03A9F4;*/
+  border-left: 3px solid #03A9F4;
+}
+
+.notification.warning {
+  /*background: #ffdb5b;*/
+  border-left: 3px solid #ffdb5b;
+}
+
+@keyframes come-right {
+  0% {
+    opacity: 0;
+    right: -50px;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    right: 0px;
+  }
+
+}
+
+@keyframes closing-section {
+  0% {
+    opacity: 1;
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(50px);
+  }
+}
+
+.animation {
+  animation: come-right .5s;
+}
+
+.close-animation {
+  animation: closing-section 1s;
+}

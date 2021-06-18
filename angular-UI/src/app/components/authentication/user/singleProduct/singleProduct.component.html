@@ -1,0 +1,56 @@
+<app-home-list></app-home-list>
+
+<div class="innerpage_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{{productDetails.productName}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="padding-top: 30px;">
+    <span style="padding-left: 10px;color: #30475e;font-weight: 500;cursor: pointer;" (click)="goToHome()">Home</span><span style="padding-left: 10px;">></span>
+    <span style="padding-left: 10px;color: #30475e;font-weight: 500;cursor: pointer;" (click)="goToCategory(productDetails.subCategory)">Category</span> <span style="padding-left: 10px;">></span>
+    <span style="padding-left: 10px;">Product</span>
+</div>
+<!-- section -->
+<div class="section layout_padding wrapper">
+    <div class="portfolio">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portfolio-container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 portfolio-item">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="{{APIUrl+productDetails.productImage?APIUrl+productDetails.productImage:''}}"
+                                            alt="Project Image">
+                                        <a href="{{APIUrl+productDetails.productImage?APIUrl+productDetails.productImage:''}}"
+                                            class="link-preview" data-lightbox="portfolio"
+                                            [attr.data-imageText]='productDetails.productName'
+                                            [attr.data-imageContent]='productDetails.productDescription'
+                                            [attr.data-imageId]='productDetails.id'><i class="fa fa-eye"></i></a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="full center">
+                                    <div class="heading_main text_align_center">
+                                        <p class="large" style="text-align: center;font-size: 30px;color: black;text-transform: uppercase;font-weight: 400">
+                                            {{productDetails.productName}}</p>
+                                        <p style="text-align: center;font-size: 24px;font-weight: 500;line-height: 1.5;color: black;">
+                                                {{productDetails.subCategory}}</p>
+                                        <p style="text-align: justify;font-size: 18px;line-height: 1.5;color: black;">
+                                            {{productDetails.productDescription}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
